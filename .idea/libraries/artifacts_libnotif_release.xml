@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="artifacts:libnotif-release">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libnotif-release.aar/c89a429810ae1e67d8ee1a65cb50a6c8/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libnotif-release.aar/c89a429810ae1e67d8ee1a65cb50a6c8/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

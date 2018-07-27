@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.vtion.kantarradio">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.semusi.analytics.appid"
+            android:value="5a5dfef0d2651fac0b6e98bb" />
+        <meta-data
+            android:name="com.semusi.analytics.appkey"
+            android:value="ca8dcc94b81b710b661f20e1e2395dad7d428d2c" />
+        <meta-data
+            android:name="com.semusi.analytics.apikey"
+            android:value="7c200b1852935a4bcba16a7f96f26adf4a68442c" />
+
+        <activity android:name=".TermsNConditionsActivity"
+            android:parentActivityName=".MainActivity"></activity>
+    </application>
+
+</manifest>
