@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.vtionmaster">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/vtion"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/vtion"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UpdateDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OTPVerificationScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TermsNConditionsActivity"
+            android:parentActivityName=".UpdateDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsScreen"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.semusi.analytics.appid"
+            android:value="5acb994ce96b09565e1f1d7b" />
+        <meta-data
+            android:name="com.semusi.analytics.appkey"
+            android:value="b8b29baed4b5634559f1e1f957f9bd666e13587d" />
+        <meta-data
+            android:name="com.semusi.analytics.apikey"
+            android:value="7c200b1852935a4bcba16a7f96f26adf4a68442c" />
+
+        <activity android:name=".PinValidationActivity"></activity>
+    </application>
+
+</manifest>
