@@ -1,0 +1,26 @@
+<!-- View header bar is hidden using attribute 'hide-nav-bar="true"' -->
+<ion-view title="Settings" hide-nav-bar="false">
+  <ion-nav-buttons side="left">
+     <i class = "icon icon ion-android-arrow-back" ui-sref="app.start"></i>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+        <ul class="list">
+          <li class="item item-toggle">
+             All Notifications
+             <label class="toggle toggle-balanced" ng-show="isAccess">
+                 <input type="checkbox" checked value="on" disabled>
+                 <div class="track">
+                     <div class="handle"></div>
+                 </div>
+             </label>
+
+              <label class="toggle toggle-balanced" ng-click="openNotificationAccess()" ng-show="!isAccess">
+                  <input type="checkbox">
+                  <div class="track">
+                      <div class="handle"></div>
+                  </div>
+              </label>
+          </li>
+        </ul>
+    </ion-content>
+</ion-view>

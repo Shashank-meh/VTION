@@ -1,0 +1,61 @@
+<!-- View header bar is hidden using attribute 'hide-nav-bar="true"' -->
+<ion-view title="User Details" hide-nav-bar="false">
+  <ion-nav-buttons side="left">
+     <i class = "icon icon ion-android-arrow-back" ui-sref="app.start"></i>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <i ng-show="isEdit" class = "icon icon ion-ios-compose-outline" ui-sref="app.update-details"></i>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+        <ion-refresher
+          on-refresh="doRefresh()"
+          pullingIcon="arrow-round-down"
+          pullingText="release to refresh..."
+          refreshingIcon="sync"
+          refreshingText="refreshing...">
+        </ion-refresher>  
+        <ul class="list">
+          <li class="item item-toggle">
+             First Name
+             <label class="toggle toggle-balanced">
+                {{userData.fn}}
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Last Name
+             <label class="toggle toggle-balanced">
+               {{userData.ln}}
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Email
+             <label class="toggle toggle-balanced">
+               {{userData.em}}
+             </label>
+          </li>
+          <li class="item item-toggle">
+             City
+             <label class="toggle toggle-balanced">
+               {{userData.cty}}
+             </label>
+          </li>
+           <li class="item item-toggle">
+             Mobile No
+             <label class="toggle toggle-balanced">
+               {{userData.mno}}
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Status
+             <label class="toggle toggle-balanced">
+               <input ng-if="userData.st" type="checkbox" checked value="on" disabled>
+               <input ng-if="!userData.st && userData.mno" type="checkbox" ui-sref="app.activate">
+               <input ng-if="!userData.mno" type="checkbox" disabled>
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        </ul>
+    </ion-content>
+</ion-view>

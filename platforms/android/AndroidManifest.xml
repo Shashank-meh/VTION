@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest android:hardwareAccelerated="true" android:versionCode="1" android:versionName="0.0.1" package="com.fmRadio.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application android:hardwareAccelerated="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:supportsRtl="true">
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name="MainActivity" android:theme="@android:style/Theme.DeviceDefault.NoActionBar" android:windowSoftInputMode="adjustResize">
+            <intent-filter android:label="@string/launcher_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+        <receiver android:exported="true" android:name="com.google.android.gms.gcm.GcmReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.fmRadio.app" />
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="io.appice.EventsReceiver">
+            <intent-filter>
+                <action android:name="com.appice.customEvents" />
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.semusi.analytics.appid" android:value="583e6143ca3b1959380b54b4" />
+        <meta-data android:name="com.semusi.analytics.appkey" android:value="7c200b1852935a4bcba16a7f96f26adf4a68442c" />
+        <meta-data android:name="com.semusi.analytics.apikey" android:value="d985715d1bb48942d36d5d08de3b6a8c" />
+    </application>
+    <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="25" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <permission android:name="com.fmRadio.app.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.fmRadio.app.permission.C2D_MESSAGE" />
+</manifest>

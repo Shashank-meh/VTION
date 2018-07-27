@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="appice-cordova-plugin" version="1.0.0">
+  
+  <!-- <engines>
+      <engine name="cordova" version=">=3.1.0" />
+  </engines> -->
+
+  <name>AppICE</name>
+
+  <description>This plugin allows you add real time analytics to your product. Powered by AppICE (www.appice.io).</description>
+
+  <author>AppICE</author>
+
+  <license>MIT</license>
+
+  <js-module src="www/AppICE.js" name="AppICE">
+      <clobbers target="plugins.AppICE" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <source-file src="src/android/src/io/appice/AppICE/AppICE.java" target-dir="src/io/appice/AppICE" />
+    <source-file src="src/android/src/io/appice/AppICE/EventsReceiver.java" target-dir="src/io/appice/AppICE" />
+    <source-file src="src/android/src/io/appice/AppICE/db/DataSourceHandler.java" target-dir="src/io/appice/AppICE/db" />
+    <source-file src="src/android/src/io/appice/AppICE/db/DataStoreHandler.java" target-dir="src/io/appice/AppICE/db" />
+    <source-file src="src/android/src/io/appice/AppICE/db/DbAppDataObject.java" target-dir="src/io/appice/AppICE/db" />
+    
+    <config-file>
+      <access origin="*.appice.io" />
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <permission
+        android:name="$PACKAGE_NAME.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+      <uses-permission android:name="$PACKAGE_NAME.permission.C2D_MESSAGE"/>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+
+      <receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+        <intent-filter>
+          <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+          <category android:name="$PACKAGE_NAME" />
+        </intent-filter>
+      </receiver>
+      
+      <!-- Events receiver -->
+      <receiver
+          android:name="io.appice.EventsReceiver"
+          android:exported="true">
+          <intent-filter>
+              <action android:name="com.appice.customEvents" />
+          </intent-filter>
+      </receiver>
+      <!-- Events end -->
+
+    </config-file>
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="AppICE">
+        <param name="android-package" value="io.appice.AppICE" onload="true" />
+      </feature>
+    </config-file>
+
+    <framework src="com.google.android.gms:play-services-gcm:+" />
+    <framework src="com.google.android.gms:play-services-ads:+" />
+    <framework src="com.android.support:support-v4:+" />
+    <framework src="appice.io.android:sdk:+" />
+    <framework src="appice.gradle" custom="true" type="gradleReference" />
+  </platform>
+
+</plugin>

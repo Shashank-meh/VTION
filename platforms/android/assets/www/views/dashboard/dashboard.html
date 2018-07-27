@@ -1,0 +1,55 @@
+<ion-view title="Vtion">
+  <ion-nav-buttons side="left">
+     <i class = "icon icon ion-person" ui-sref="app.user-details"></i>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <i class = "icon icon ion-ios-gear" ui-sref="app.settings"></i>
+  </ion-nav-buttons>
+  <ion-content>
+      <ion-refresher
+          on-refresh="doRefresh()"
+          pullingIcon="arrow-round-down"
+          pullingText="release to refresh..."
+          refreshingIcon="sync"
+          refreshingText="refreshing...">
+      </ion-refresher>
+      
+      <div class="list animate-fade-slide-in-right padding">
+          <div layout-gt-sm="row" class="row padding-top">
+              <div class="col">
+                  <h4>Recent Activities</h4>
+              </div>
+          </div>
+          <md-divider></md-divider>
+          <div layout-gt-sm="row" class="row">
+             <div class="col col-33">
+                <h5>Date</h5>
+             </div>
+             <div class="col col-33">
+                <h5>Channel Tuned</h5>
+             </div>
+             <div class="col col-33 right-side">
+                <h5>Play Time</h5>
+             </div>
+          </div> 
+          <md-divider></md-divider>
+          <div ng-repeat="channel in channels">
+              <div layout-gt-sm="row" class="row">
+                 <div class="col col-33">
+                    <p>{{channel.date}}</p>
+                 </div>
+                 <div class="col col-33">
+                    <p>{{channel.event}}</p>
+                 </div>
+                 <div class="col col-33 right-side">
+                    <p>{{channel.time}}</p>
+                 </div>
+              </div>
+              <md-divider></md-divider>
+          </div>
+      </div>
+  </ion-content>
+  <ion-footer-bar align-title="center" ng-if="isRegistered">
+        <button class="button button-full button-positive ink" ui-sref="app.register"><h4>Registration<h4></button>
+    </ion-footer-bar>
+</ion-view>
