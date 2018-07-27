@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:layout_above="@id/phone_input"
+        android:layout_marginBottom="30dp"
+        android:text="Please enter your 10-digit mobile number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/phone_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:inputType="phone"
+        android:maxLength="10"/>
+
+    <LinearLayout
+        android:id="@+id/ll_tnc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/phone_input"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:padding="5dp">
+        <CheckBox
+            android:id="@+id/checkbox_tnc"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            />
+        <TextView
+            android:id="@+id/tnc_text"
+            android:text="Terms and Conditions"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="SUBMIT"/>
+
+</RelativeLayout>
