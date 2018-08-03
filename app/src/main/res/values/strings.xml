@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VTION Video Meter</string>
+
+    <string name="app_desc">REAL TIME AUDIENCE MEASUREMENT ON SMART DEVICES</string>
+    <string name="app_tnc">Terms and Conditions</string>
+
+    <string name="app_register">Register</string>
+
+    <string name="app_version">App Version - 1.0</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="facebook_app_id">204363603531979</string>
+    <string name="fb_login_protocol_scheme">fb204363603531979</string>
+
+</resources>
