@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">VTION TAM INDIA</string>
+
+    <string name="app_desc">REAL TIME AUDIENCE MEASUREMENT ON SMART DEVICES</string>
+    <string name="app_tnc">Terms and Conditions</string>
+
+    <string name="app_register">Register</string>
+
+    <string name="app_version">App Version - 1.0</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="facebook_app_id">204363603531979</string>
+    <string name="fb_login_protocol_scheme">fb204363603531979</string>
+
+    <!--Intro slider strings-->
+    <string name="next">NEXT</string>
+    <string name="skip">Skip</string>
+    <string name="gotit">GOT IT</string>
+
+    <!--Welcome slider1 strings-->
+    <string name="title_radio">RADIO Listenership Measurement</string>
+    <string name="desc_radio">We welcome you to be the part of our smart measurement panel</string>
+
+    <!--Welcome slider2 strings-->
+    <string name="title_reward">Timely Incentives</string>
+    <string name="desc_reward">We will gratify our panel members by timely incentivising them !</string>
+
+    <!--Welcome slider3 strings-->
+    <string name="title_security">Data Security</string>
+    <string name="desc_security">Please be assured that your data cannot be compromised and will only be used for Research Purpose</string>
+
+</resources>

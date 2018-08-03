@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/VTION_TAM_India.iml" filepath="$PROJECT_DIR$/VTION_TAM_India.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libnotif-release/libnotif-release.iml" filepath="$PROJECT_DIR$/libnotif-release/libnotif-release.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libsdk-release/libsdk-release.iml" filepath="$PROJECT_DIR$/libsdk-release/libsdk-release.iml" />
+    </modules>
+  </component>
+</project>

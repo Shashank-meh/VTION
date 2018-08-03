@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: artifacts:libsdk-release">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libsdk-release.aar/b1d1bd635dd9b39e6a6da7b31aedd17b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/libsdk-release.aar/b1d1bd635dd9b39e6a6da7b31aedd17b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
