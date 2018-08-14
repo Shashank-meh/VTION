@@ -5,6 +5,21 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <!--<uses-permission android:name="android.permission.READ_SMS" />-->
 
+    <uses-permission android:name="anxdroid.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -13,6 +28,20 @@
         android:roundIcon="@drawable/vtion"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!-- gcm start -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+        <!-- gcm end -->
+
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -22,6 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
@@ -29,6 +59,7 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <meta-data
             android:name="com.semusi.analytics.appid"
             android:value="5b3603f41261d7fa6db4ce0e" />
@@ -39,11 +70,12 @@
             android:name="com.semusi.analytics.apikey"
             android:value="7c200b1852935a4bcba16a7f96f26adf4a68442c" />
 
-        <activity
-            android:name=".TermsNConditionsActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".PhoneValidationActivity"
-            android:screenOrientation="portrait"></activity>
+        <!--<activity-->
+            <!--android:name=".TermsNConditionsActivity"-->
+            <!--android:parentActivityName=".MainActivity" />-->
+
+        <!--<activity android:name=".PhoneValidationActivity"-->
+            <!--android:screenOrientation="portrait" />-->
     </application>
 
 </manifest>

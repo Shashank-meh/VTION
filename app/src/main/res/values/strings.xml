@@ -4,7 +4,7 @@
     <!--Registration screen-->
     <string name="app_desc">REAL TIME AUDIENCE MEASUREMENT ON SMART DEVICES</string>
     <string name="app_tnc">Terms and Conditions</string>
-    <string name="app_version">App Version - 1.0</string>
+    <string name="app_version">App Version - 1.2</string>
 
     <string name="pref_tnc_url">http://fm.appice.io/v1/getTcContent2</string>
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import com.vtion.Utility.ComSharedPref;
 import com.vtion.Utility.Utility;
 
 import java.util.HashMap;
@@ -17,8 +18,8 @@ import semusi.activitysdk.ContextSdk;
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = MainActivity.class.getSimpleName();
-    private String msgBody="";
-    private String refNo="",otp="";
+    private String msgBody = "";
+    private String refNo = "", otp = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +76,32 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         showNotifDialog();
+
+        // Check for registration info sent
+        try {
+            boolean isSent = ComSharedPref.loadBooleanSavedPreferences("register_sent", getApplicationContext());
+            if (!isSent) {
+                // Gather installer info
+                String installRef = ContextSdk.getReferrer(getApplicationContext());
+                System.out.println("vtion Ref Info : " + installRef);
+                if (installRef != null && installRef.length() > 0) {
+                    // Send registration event with info
+                    HashMap<String, Object> map = new HashMap<>();
+                    String[] arr = installRef.split("&");
+                    if (arr != null && arr.length > 1) {
+                        for (String val : arr) {
+                            String[] sub = val.split("=");
+                            map.put(sub[0], sub[1]);
+                        }
+                        if (map != null && map.size() > 0) {
+                            ContextSdk.tagEventObj("Registration", map, getApplicationContext());
+                            ComSharedPref.saveBooleanPreferences("register_sent", true, getApplicationContext());
+                        }
+                    }
+                }
+            }
+        } catch (Exception e) {
+        }
     }
 
     /*@Override
@@ -103,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
 
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -114,8 +140,7 @@ public class MainActivity extends AppCompatActivity {
             HashMap<String, Object> map = new HashMap<>();
             map.put("state", false);
             ContextSdk.tagEventObj("NotificationState", map, MainActivity.this);
-        }
-        else if (Utility.hasNotificationAccess(getApplicationContext())) {
+        } else if (Utility.hasNotificationAccess(getApplicationContext())) {
             if (notifDialog != null && notifDialog.isShowing()) {
                 isNotifDlgVisible = false;
                 notifDialog.cancel();
@@ -166,9 +191,9 @@ public class MainActivity extends AppCompatActivity {
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                         startActivity(intent);
 
-                            notifTimer.cancel();
-                            notifTimer.purge();
-                            notifTimer = null;
+                        notifTimer.cancel();
+                        notifTimer.purge();
+                        notifTimer = null;
                     }
                 }
             }, 1000, 1000);
