@@ -76,6 +76,9 @@
 
         <!--<activity android:name=".PhoneValidationActivity"-->
             <!--android:screenOrientation="portrait" />-->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="4c681c0aec1e9b10a9784426c12d1556246a7431" />
     </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.vtion.Utility.ComSharedPref;
 import com.vtion.Utility.Utility;
 
@@ -20,12 +21,16 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = MainActivity.class.getSimpleName();
     private String msgBody = "";
     private String refNo = "", otp = "";
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //setTitle("Kantar Metrics");
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
         /*Button btnTermsNCondtns = findViewById(R.id.btn_tnc);
         btnTermsNCondtns.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (Exception e) {
         }
+
     }
 
     /*@Override

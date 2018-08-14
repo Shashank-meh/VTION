@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "783222222712",
+    "firebase_url": "https://vtion-mx.firebaseio.com",
+    "project_id": "vtion-mx",
+    "storage_bucket": "vtion-mx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:783222222712:android:e344674baf5352e1",
+        "android_client_info": {
+          "package_name": "com.vtion.mx"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "783222222712-nvkpc5gvfs3msn9scnfqm5uj6i89d9l1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vtion.mx",
+            "certificate_hash": "7972bf79c7418c73269ba1f40e12aab2f8374ae9"
+          }
+        },
+        {
+          "client_id": "783222222712-fb6cuib0c4s2iivvtd7th0p213hl786u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyggWHlj1h79cOlgQSy9Y1QCnc9LXbjVE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "783222222712-fb6cuib0c4s2iivvtd7th0p213hl786u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
