@@ -1,1 +1,1 @@
-include ':app', ':libnotif', ':libsdk-release'
+include ':app', ':libsdk', ':libnotif'

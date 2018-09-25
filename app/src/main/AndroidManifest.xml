@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="in.vtion.vtion_sdk">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.vtion.sampleapp">
+
+    <uses-sdk tools:overrideLibrary="com.google.firebase.firebase_core, com.google.android.gms.measurement, com.google.android.gms.measurement.impl, com.intuit.sdp, com.sentiance.sdk, com.google.firebase, com.google.firebase.iid, com.urbanairship, com.google.android.gms, com.google.android.gms.safetynet, com.google.android.gms.location, com.google.android.gms.ads, com.google.android.gms.ads.impl, com.google.android.gms.clearcut, com.google.android.gms.gass, com.google.android.gms.gcm, com.google.android.gms.iid, com.google.android.gms.vision, com.google.android.gms.base, com.google.android.gms.tasks" />
 
     <uses-permission android:name="anxdroid.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -10,8 +13,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
-
-    <!-- gcm start -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <permission
@@ -21,16 +22,46 @@
     <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true">
-        <activity android:name=".MainActivity">
+        android:name="in.vtion.ui.MainApplication"
+        android:icon="@drawable/viton1"
+        android:label="Vtion Sample">
+        <activity
+            android:name="in.vtion.ui.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="mainscreen"
+                    android:scheme="vtion" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="in.vtion.ui.TestActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <data
+                    android:host="testscreen"
+                    android:scheme="vtion" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
 
@@ -47,21 +78,27 @@
         </receiver>
         <!-- gcm end -->
 
+
+        <!-- Start of required meta-data -->
         <meta-data
-            android:name="com.semusi.analytics.appid"
-            android:value="5b3dc8fc87796276543e713e"/>
-        <meta-data
-            android:name="com.semusi.analytics.appkey"
-            android:value="50cd8268ab2a881a864eb3b4a74ea5b03b466d28"/>
-        <meta-data
-            android:name="com.semusi.analytics.apikey"
-            android:value="2be7e8bd504477483df7a3cb186ea613"/>
+            android:name="in.vtion.appid"
+            android:value="5ba0943a251f50313358103a" />
+        <!-- End of required meta-data -->
+
 
         <!-- Play service meta-data -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <receiver
+            android:name="in.vtion.receiver.EventReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.vtion.Events" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

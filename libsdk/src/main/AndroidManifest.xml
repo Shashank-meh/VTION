@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="in.vtion.sdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-permission xmlns:tools="http://schemas.android.com/tools"
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-sdk tools:overrideLibrary="com.google.firebase.messaging, com.google.firebase.iid, com.google.firebase, com.google.android.gms, com.google.android.gms.safetynet, com.google.android.gms.location, com.google.android.gms.ads, com.google.android.gms.ads.impl, com.google.android.gms.clearcut, com.google.android.gms.gass, com.google.android.gms.gcm, com.google.android.gms.iid, com.google.android.gms.vision, com.google.android.gms.base, com.google.android.gms.tasks" />
+
+    <application>
+
+        <!-- Semusi setup start -->
+        <service
+            android:name="vtion.activitysdk.Api"
+            android:exported="false"
+            android:protectionLevel="signature" />
+
+        <receiver
+            android:name="vtion.context.counthandler.DataSyncReceiver"
+            android:exported="true" />
+
+        <receiver
+            android:name="vtion.analytics.handler.InstallReferralHandler"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="vtion.context.counthandler.DeviceBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

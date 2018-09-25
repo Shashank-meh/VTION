@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/VtionSdk.iml" filepath="$PROJECT_DIR$/VtionSdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libnotif/libnotif.iml" filepath="$PROJECT_DIR$/libnotif/libnotif.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libsdk/libsdk.iml" filepath="$PROJECT_DIR$/libsdk/libsdk.iml" />
+    </modules>
+  </component>
+</project>

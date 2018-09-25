@@ -4,30 +4,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
-
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.WRITE_GSERVICES" />
+
+    <uses-sdk tools:overrideLibrary="com.google.firebase.messaging, com.google.firebase.iid, com.google.firebase, com.google.android.gms, com.google.android.gms.safetynet, com.google.android.gms.location, com.google.android.gms.ads, com.google.android.gms.ads.impl, com.google.android.gms.clearcut, com.google.android.gms.gass, com.google.android.gms.gcm, com.google.android.gms.iid, com.google.android.gms.vision, com.google.android.gms.base, com.google.android.gms.tasks" />
 
     <application>
 
         <service
-            android:name="in.vtion.libnotif.NotificationService"
+            android:name="vtion.analytics.handler.NotificationService"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
-        </service>
-
-        <service
-            android:name="in.vtion.libnotif.NotificationAccessibility"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
-            <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService" />
-            </intent-filter>
-            <meta-data
-                android:name="android.accessibilityservice"
-                android:resource="@xml/vtionaccessibility" />
         </service>
 
         <meta-data
